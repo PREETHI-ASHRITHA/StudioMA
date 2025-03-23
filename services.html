@@ -32,6 +32,7 @@
   <title>Services | The MA Studio 🟡🔵</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/dark-theme.css">
+  <link rel="stylesheet" href="css/services.css">
   <!-- Google tag (gtag.js) -->
 
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -68,17 +69,17 @@
     </script>
   <style>
     /* inter-300 - latin */
-    @font-face {
+    /* @font-face {
       font-family: 'Inter';
       font-style: normal;
       font-weight: 300;
       font-display: swap;
-      src: local(''),
-        url('./fonts/inter-v12-latin-300.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('./fonts/inter-v12-latin-300.woff') format('woff');
-      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
+      src: local(''), */
+    /* url('./fonts/inter-v12-latin-300.woff2') format('woff2'), */
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    /* url('./fonts/inter-v12-latin-300.woff') format('woff'); */
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    /* }
 
     @font-face {
       font-family: 'Inter';
@@ -86,13 +87,13 @@
       font-weight: 500;
       font-display: swap;
       src: local(''),
-        url('./fonts/inter-v12-latin-500.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('./fonts/inter-v12-latin-500.woff') format('woff');
-      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
+        url('./fonts/inter-v12-latin-500.woff2') format('woff2'), */
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    /* url('./fonts/inter-v12-latin-500.woff') format('woff'); */
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    /* } */
 
-    @font-face {
+    /* @font-face {
       font-family: 'Inter';
       font-style: normal;
       font-weight: 700;
@@ -100,11 +101,11 @@
       src: local(''),
         url('./fonts/inter-v12-latin-700.woff2') format('woff2'),
         /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('./fonts/inter-v12-latin-700.woff') format('woff');
-      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
+    /* url('./fonts/inter-v12-latin-700.woff') format('woff'); */
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    /* } */
 
-    .form-input:focus {
+    /* .form-input:focus {
       box-shadow: 0 0;
       background: none;
     }
@@ -144,95 +145,287 @@
         display: flex;
         justify-content: center;
       }
+    } */
+    .blob-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .blob {
+      position: fixed;
+      width: 800px;
+      height: 800px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* background: linear-gradient(180deg,
+          rgba(174, 204, 226, 0.15) 31.77%,
+          rgba(239, 240, 245, 0.15) 100%); */
+
+      /* background-color: rgb(56, 111, 249);     */
+
+      background: linear-gradient(45deg,
+          rgba(56, 111, 249, 0.7) 100%,
+          rgba(0, 0, 0, 0.7) 0%);
+      mix-blend-mode: multiply;
+      filter: blur(50px);
+      animation: blobAnimation 15s infinite alternate;
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+
+    @keyframes blobAnimation {
+      0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(-50%, -50%) rotate(0deg);
+        filter: blur(30px);
+      }
+
+      100% {
+        border-radius: 40% 60% 70% 30% / 30% 60% 40% 70%;
+        transform: translate(-50%, -50%) rotate(360deg);
+        filter: blur(70px);
+      }
+    }
+
+    /* Ensure content remains readable */
+    body {
+      background-color: #000000;
+    }
+
+    .services-main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .services-navbar {
+      position: relative;
+      z-index: 2;
+      background: #000000 !important;
+      backdrop-filter: blur(10px);
+    }
+
+    .services-intro-container {
+
+      /* background: transparent; */
+      /* backdrop-filter: blur(10px); */
+      padding: 2.5rem;
+      border-radius: 20px;
+      /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); */
+      margin: 5vh auto;
+      max-width: 800px;
+      width: 90%;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .row.col-12.pb-5.row2 {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .col-12.col-lg-6.pt-5 {
+      padding-top: 0 !important;
+    }
+
+    .services-description {
+      font-size: 1.8rem;
+      line-height: 1.5;
+      color: white;
+      margin-bottom: 2rem;
+    }
+
+    .consultation-btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      /* background: linear-gradient(45deg, #001dd0, #0026ff); */
+      background-color: #f7c03f;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 29, 208, 0.2);
+    }
+
+    .consultation-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 29, 208, 0.3);
+      background: linear-gradient(45deg, #0026ff, #001dd0);
+    }
+
+    .consultation-btn span {
+      display: inline-block;
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .consultation-btn:hover span {
+      transform: translateX(5px);
+    }
+
+    @media (max-width: 768px) {
+      .services-intro-container {
+        padding: 1.5rem;
+        margin: 3vh auto;
+        width: 95%;
+      }
+
+      .services-description {
+        font-size: 1.4rem;
+      }
+
+      .consultation-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+     
+    <!--footer-->
+
+
+    .service-footer {
+      background-color: transparent !important;
+      padding: 4rem 0;
+      /* color: #ffffff; */
+      z-index: 1;
+    }
+
+    .service-footer h6 {
+      color: #f7c03f;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-footer .nav-item {
+      margin-bottom: 0.5rem;
+      z-index: 2;
+    }
+
+    .service-footer .f-link-fancy {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .service-footer .f-link-fancy:hover {
+      color: #f7c03f;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .service-footer {
+        padding: 2rem 0;
+      }
+
+      .service-footer h6 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .service-footer .f-link-fancy {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navScroll">
+  <div class="blob-container">
+    <div class="blob"></div>
+  </div>
   <button class="btn position-fixed bottom-0 end-0 translate-middle d-none" onclick="scrollToTop()" id="back-to-up">
     <i class="ri-arrow-up-line"></i>
   </button>
   <div class="cursor"></div>
   <div class="cursor2"></div>
-  <nav id="navScroll" class="navbar navbar-expand-lg navbar-dark pb-0 px-vw-5" tabindex="0"></nav>
-  <!-- <nav id="navScroll" class="navbar navbar-expand-lg navbar-light pb-0 services-navbar px-vw-5" tabindex="0"> -->
-  <div class="container-fluid">
-    <a class="navbar-brand pe-4 fs-4" href="index.html">
-      <!-- SVG ICON -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="100px" viewBox="0 0 976.11 383.87">
-        <defs>
-          <style>
-            .lgcircle {
-              fill: #001dd0;
-            }
+  <nav id="navScroll" class="navbar navbar-expand-lg navbar-dark pb-0 services-navbar px-vw-5" tabindex="0">
+    <!-- <nav id="navScroll" class="navbar navbar-expand-lg navbar-light pb-0 services-navbar px-vw-5" tabindex="0"> -->
+    <div class="container-fluid">
+      <a class="navbar-brand pe-4 fs-4" href="index.html">
+        <!-- SVG ICON -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="100px" viewBox="0 0 976.11 383.87">
+          <defs>
+            <style>
+              .lgcircle {
+                fill: #001dd0;
+              }
 
-            .smcircle {
-              fill: #f7c03f;
-            }
+              .smcircle {
+                fill: #f7c03f;
+              }
 
-            .ma-text {
-              fill: #000
-            }
-          </style>
-        </defs>
-        <g id="icon-lg">
-          <circle class="lgcircle" cx="242.25" cy="168.42" r="168.42" />
-          <circle class="smcircle" cx="36.41" cy="347.46" r="36.41" />
-        </g>
-        <path class="ma-text"
-          d="M557.94,423.93h63.13l53.55,130.58h2.47l53.55-130.58h63.13V634.84H744.13V505.28h-1.75L691.71,633.5H660L609.33,504.56h-1.75V634.84H557.94Z"
-          transform="translate(-51.95 -337.45)" />
-        <path class="ma-text"
-          d="M872.65,634.84H817.87L889,423.93h67.86l71.16,210.91H973.27l-13.9-44.29H886.56Zm26.06-83h48.5l-23.48-74.76h-1.65Z"
-          transform="translate(-51.95 -337.45)" />
-      </svg>
-    </a>
-    <button class="navbar-toggler services-navbar-toggler" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon services-navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-        <li class="nav-item"> <a class="nav-link fs-5" href="index.html#home" aria-label="Homepage"> Home </a> </li>
-        <li class="nav-item"> <a class="nav-link fs-5" href="#services" aria-label="Services"> Services </a> </li>
-        <li class="nav-item"> <a class="nav-link fs-5" href="#portfolio" aria-label="Projects"> Projects </a></li>
-        <li class="nav-item"> <a class="nav-link fs-5" href="coming-soon.html" aria-label="Community"> Community <span
-              class="beta-btn">Beta v1.00</span> </a></li>
-        <li class="nav-item"> <!-- <a class="nav-link fs-5" href="#" id="the-public" aria-label="Blog"> --> <a
-            class="nav-link fs-5" id="the-public" aria-label="Blog"> The Public <span class="beta-btn">Beta v0.10</span>
-          </a>
-        </li>
-        <li class="nav-item"> <a class="nav-link fs-5" href="about-us.html" aria-label="About"> About Us</a></li>
-        <li class="nav-item"> <a class="nav-link fs-5" href="https://ahsirisbyarika.zapier.app/" aria-label="About">
-            Chat <small> <img src="img/icons/chat-o-b.png" width="20" height="20"> </small> </a></li>
-      </ul>
-      <a href="get-quote.html" class="btn btn-outline-dark">
-        <small>Get Quote </small>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right"
-          viewBox="0 0 16 16">
-          <path fill-rule="evenodd"
-            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+              .ma-text {
+                fill: #ffffff;
+              }
+            </style>
+          </defs>
+          <g id="icon-lg">
+            <circle class="lgcircle" cx="242.25" cy="168.42" r="168.42" />
+            <circle class="smcircle" cx="36.41" cy="347.46" r="36.41" />
+          </g>
+          <path class="ma-text"
+            d="M557.94,423.93h63.13l53.55,130.58h2.47l53.55-130.58h63.13V634.84H744.13V505.28h-1.75L691.71,633.5H660L609.33,504.56h-1.75V634.84H557.94Z"
+            transform="translate(-51.95 -337.45)" />
+          <path class="ma-text"
+            d="M872.65,634.84H817.87L889,423.93h67.86l71.16,210.91H973.27l-13.9-44.29H886.56Zm26.06-83h48.5l-23.48-74.76h-1.65Z"
+            transform="translate(-51.95 -337.45)" />
         </svg>
       </a>
+      <button class="navbar-toggler services-navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon services-navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"> <a class="nav-link fs-5" href="index.html#home" aria-label="Homepage"> Home </a> </li>
+          <li class="nav-item"> <a class="nav-link fs-5" href="#services" aria-label="Services"> Services </a> </li>
+          <li class="nav-item"> <a class="nav-link fs-5" href="#portfolio" aria-label="Projects"> Projects </a></li>
+          <li class="nav-item"> <a class="nav-link fs-5" href="coming-soon.html" aria-label="Community"> Community <span
+                class="beta-btn">Beta v1.00</span> </a></li>
+          <li class="nav-item"> <!-- <a class="nav-link fs-5" href="#" id="the-public" aria-label="Blog"> --> <a
+              class="nav-link fs-5" id="the-public" aria-label="Blog"> The Public <span class="beta-btn">Beta
+                v0.10</span>
+            </a>
+          </li>
+          <li class="nav-item"> <a class="nav-link fs-5" href="about-us.html" aria-label="About"> About Us</a></li>
+          <li class="nav-item"> <a class="nav-link fs-5" href="https://ahsirisbyarika.zapier.app/" aria-label="About">
+              Chat <small> <img src="img/icons/chat-o-b.png" width="20" height="20"> </small> </a></li>
+        </ul>
+        <a href="get-quote.html" class="btn btn-outline-dark">
+          <small>Get Quote </small>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+          </svg>
+        </a>
+      </div>
     </div>
-  </div>
   </nav>
 
   <main class="services-main container-fluid px-vw-5">
     <div class="row col-12 pb-5 row2">
-      <div class="col-12 col-lg-6">
-        <!-- <h1 class="services-section">Services</h1> -->
+      <!-- <div class="col-12 col-lg-6">
+        <h1 class="services-section">Services</h1>
         <h1 class="display-1 fw-bold services-section">Services</h1>
 
-      </div>
+      </div> -->
       <div class="col-12 col-lg-6 pt-5">
-        <h3 class="services-description">We provide a versatile range of services from design to development, ensuring
-          our clients a seamless and cohesive experience serving as a one-stop solution for all your comprehensive
-          branding and development needs!</h3>
-        <a class="text-black " href="get-quote.html">
-          <h4 class="consultation pt-3 pb-5">Get Your Free Consultation Right Now <span>&#129126;</span></h4>
-        </a>
+        <div class="services-intro-container">
+          <h3 class="services-description">We provide a versatile range of services from design to development, ensuring
+            our clients a seamless and cohesive experience serving as a one-stop solution for all your comprehensive
+            branding and development needs!</h3>
+          <a href="get-quote.html" class="consultation-btn">Get Your Free Consultation Right Now
+            <span>&#129126;</span></a>
+        </div>
         <div>
           <ul class="services-faq">
             <li>
@@ -260,7 +453,7 @@
                 <span class="service-list-item">Brand Purpose</span> -->
               <div class="service-list-items bg-light p-3 rounded">
                 <span class="fw-bold mb-2 d-block">Our Brand Strategy Services include -</span>
-                <span class="service-list-item badge bg-primary me-2 mb-2">Brand Purpose</span>
+                <span class="service-list-item">Brand Purpose</span>
                 <span class="service-list-item">Brand Positioning</span>
                 <span class="service-list-item">Competitve Analysis</span>
                 <span class="service-list-item">Voice and Messaging</span>
@@ -278,7 +471,7 @@
                 business. Let us help you define, refine, and amplify your brand for lasting impact. Contact us today to
                 schedule a consultation and embark on a journey to elevate your business identity.
                 <br>
-                <a href="get-quote.html" class="btn btn-outline-dark mt-2 mb-2">
+                <a href="get-quote.html" class="btn btn-outline-light mt-2 mb-2">
                   <small>Schedule a Free Consultation Now</small>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -321,7 +514,7 @@
                 distinctive presence.
                 <br>
 
-                <a href="get-quote.html" class="btn btn-outline-dark mt-2 mb-2">
+                <a href="get-quote.html" class="btn btn-outline-light mt-2 mb-2">
                   <small>Schedule a Free Consultation Now</small>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -361,7 +554,7 @@
               <p>
                 Schedule a consultation today and embark on the journey to nurture your brand's growth.
                 <br>
-                <a href="get-quote.html" class="btn btn-outline-dark mt-2 mb-2">
+                <a href="get-quote.html" class="btn btn-outline-light mt-2 mb-2">
                   <small>Schedule a Free Consultation Now</small>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -406,7 +599,7 @@
                 Contact us today to schedule a consultation and discover how our expert designers can help you achieve
                 your branding goals.
                 <br>
-                <a href="get-quote.html" class="btn btn-outline-dark mt-2 mb-2">
+                <a href="get-quote.html" class="btn btn-outline-light mt-2 mb-2">
                   <small>Schedule a Free Consultation Now</small>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -450,7 +643,7 @@
                 Contact us now to schedule a consultation and discover how our expert designers can elevate your digital
                 presence.
 
-                <a href="get-quote.html" class="btn btn-outline-dark mt-2 mb-2">
+                <a href="get-quote.html" class="btn btn-outline-light mt-2 mb-2">
                   <small>Schedule a Free Consultation Now</small>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -493,7 +686,7 @@
               <p>
                 Schedule a consultation today and harness the power of compelling visuals for your business success.
                 <br>
-                <a href="get-quote.html" class="btn btn-outline-dark mt-2 mb-2">
+                <a href="get-quote.html" class="btn btn-outline-light mt-2 mb-2">
                   <small>Schedule a Free Consultation Now</small>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -539,7 +732,7 @@
               <p>
                 Schedule a consultation today and take the first step towards crafting your digital identity.
                 <br>
-                <a href="get-quote.html" class="btn btn-outline-dark mt-2 mb-2">
+                <a href="get-quote.html" class="btn btn-outline-light mt-2 mb-2">
                   <small>Schedule a Free Consultation Now</small>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -584,7 +777,7 @@
               <p>
                 Schedule a consultation today and take the first step towards elevating your mobile presence.
                 <br>
-                <a href="get-quote.html" class="btn btn-outline-dark mt-2 mb-2">
+                <a href="get-quote.html" class="btn btn-outline-light mt-2 mb-2">
                   <small>Schedule a Free Consultation Now</small>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -627,7 +820,7 @@
               <p>
                 Schedule a consultation today and embark on the journey to digital transformation.
                 <br>
-                <a href="get-quote.html" class="btn btn-outline-dark mt-2 mb-2">
+                <a href="get-quote.html" class="btn btn-outline-light mt-2 mb-2">
                   <small>Schedule a Free Consultation Now</small>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -703,7 +896,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-white pp-footer service-footer px-vw-5">
+  <footer class=" pp-footer service-footer px-vw-5">
     <div class="container-fluid fw-lighter row">
       <div class="col-lg-6 col-12 mt-5">
         <div class="row">
@@ -798,7 +991,7 @@
         </form>
         <div class="mt-3">
           <h6 class="fw-bold">Have a project in-hand? </h6>
-          <span style="color: #001dd0; font-weight: normal;">Let Discuss! <br>
+          <span style="color: #ffffff; font-weight: normal;">Let Discuss! <br>
             <svg xmlns="http://www.w3.org/2000/svg" width="1.4rem" viewBox="0 0 24 24">
               <path
                 d="M9.36556 10.6821C10.302 12.3288 11.6712 13.698 13.3179 14.6344L14.2024 13.3961C14.4965 12.9845 15.0516 12.8573 15.4956 13.0998C16.9024 13.8683 18.4571 14.3353 20.0789 14.4637C20.599 14.5049 21 14.9389 21 15.4606V19.9234C21 20.4361 20.6122 20.8657 20.1022 20.9181C19.5723 20.9726 19.0377 21 18.5 21C9.93959 21 3 14.0604 3 5.5C3 4.96227 3.02742 4.42771 3.08189 3.89776C3.1343 3.38775 3.56394 3 4.07665 3H8.53942C9.0611 3 9.49513 3.40104 9.5363 3.92109C9.66467 5.54288 10.1317 7.09764 10.9002 8.50444C11.1427 8.9484 11.0155 9.50354 10.6039 9.79757L9.36556 10.6821ZM6.84425 10.0252L8.7442 8.66809C8.20547 7.50514 7.83628 6.27183 7.64727 5H5.00907C5.00303 5.16632 5 5.333 5 5.5C5 12.9558 11.0442 19 18.5 19C18.667 19 18.8337 18.997 19 18.9909V16.3527C17.7282 16.1637 16.4949 15.7945 15.3319 15.2558L13.9748 17.1558C13.4258 16.9425 12.8956 16.6915 12.3874 16.4061L12.3293 16.373C10.3697 15.2587 8.74134 13.6303 7.627 11.6707L7.59394 11.6126C7.30849 11.1044 7.05754 10.5742 6.84425 10.0252Z">

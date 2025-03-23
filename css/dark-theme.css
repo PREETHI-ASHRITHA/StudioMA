@@ -210,7 +210,8 @@ sup {
   top: -.5em; }
 
 a {
-  color: var(--bs-link-color);
+  /* color: var(--bs-link-color); */
+  color: white;
   text-decoration: underline; }
   a:hover {
     color: var(--bs-link-hover-color); }
@@ -10590,7 +10591,7 @@ footer .cprt span{
   position: relative; }
 
 .pp-footer .link-fancy-light {
-  color: #000; }
+  color: white; }
 
 .pp-footer .link-fancy:hover {
   color: #8a8a8e; }
@@ -11836,7 +11837,8 @@ body {
     background-color: #1465a1;
   }
   .bg-t2{
-    background-color: #fef6eb;
+    /* background-color: #fef6eb; */
+    background-color: #3f362d;
   }
   .bg-milkshakes{
     background-color: #3f362d;

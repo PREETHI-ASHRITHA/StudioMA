@@ -1,0 +1,153 @@
+/* Services Page Styles */
+:root {
+    --primary-color: #001dd0;
+    --secondary-color: #f7c03f;
+}
+
+.services-navbar {
+    background-color: #ffffff !important;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+p{
+    color: white;
+}
+.services-section {
+    font-size: 5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.services-description {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: white;
+}
+
+.consultation {
+    color: #001dd0;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.consultation:hover {
+    color: #000000;
+}
+
+.services-faq {
+    list-style: none;
+    padding: 0;
+}
+
+.service-question {
+    cursor: pointer;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid white;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.services-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.service-icon {
+    margin-right: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.service-question:hover .service-icon {
+    transform: scale(1.1);
+}
+
+.service-list-items {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.service-list-item {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #ffffff;
+    border: 1px solid #001dd0;
+    border-radius: 20px;
+    color: #001dd0;
+    transition: all 0.3s ease;
+}
+
+.service-list-item:hover {
+    background: #001dd0;
+    color: #ffffff;
+}
+
+.line {
+    display: block;
+    height: 1px;
+    background: white;
+    margin: 1rem 0;
+}
+
+/* Projects Section */
+.projects img {
+    height: 60px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.projects img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Testimonials Section */
+.testimonial-quote {
+    font-size: 4rem;
+    color: white;
+    font-weight: bold;
+}
+
+.testimonial-details {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.testimonial-details-name {
+    font-weight: 600;
+}
+
+.testimonial-details-name span {
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .services-section {
+        font-size: 3rem;
+    }
+    
+    .services-description {
+        font-size: 1.4rem;
+    }
+    
+    .services-title {
+        font-size: 1.2rem;
+    }
+    
+    .service-list-item {
+        margin: 0.25rem;
+        padding: 0.25rem 0.75rem;
+    }
+}
