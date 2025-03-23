@@ -9041,7 +9041,7 @@ img {
   letter-spacing: -.02rem; }
 
 .navbar-dark a.nav-link {
-  color: #fff;
+  color: #ffffff;
   border-bottom: 2px solid transparent;
   margin: 0 1rem;
   font-size: 1.33rem; }
@@ -9052,7 +9052,8 @@ img {
 
 .navbar-dark a.nav-link:hover {
 /*  color: #F7C03F;*/
-  border-bottom: 2px solid #fff; 
+  color: white;
+  border-bottom: 2px solid #ffffff; 
 }
 
 .gradient {
@@ -10591,7 +10592,7 @@ footer .cprt span{
   position: relative; }
 
 .pp-footer .link-fancy-light {
-  color: white; }
+  color: black; }
 
 .pp-footer .link-fancy:hover {
   color: #8a8a8e; }
