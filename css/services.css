@@ -16,7 +16,10 @@ p{
     font-size: 5rem;
     font-weight: bold;
     color: white;
-    margin-bottom: 2rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* margin-bottom: 2rem; */
 }
 
 .services-description {
@@ -99,6 +102,7 @@ p{
 
 /* Projects Section */
 .projects img {
+    padding-left: 1rem;
     height: 60px;
     opacity: 0.7;
     transition: all 0.3s ease;
@@ -110,11 +114,11 @@ p{
 }
 
 /* Testimonials Section */
-.testimonial-quote {
+/* .testimonial-quote {
     font-size: 4rem;
     color: white;
     font-weight: bold;
-}
+} */
 
 .testimonial-details {
     display: flex;
@@ -151,3 +155,28 @@ p{
         padding: 0.25rem 0.75rem;
     }
 }
+
+
+/* 
+.footer2 {
+  font-size: 1.2rem;
+  letter-spacing: -0.9px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+  .footer1, .footer2 {
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .footer2 {
+    padding: 0 1rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+} */
